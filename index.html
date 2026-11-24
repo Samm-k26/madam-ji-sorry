@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#fff1f5">
+<title>A Little Sorry, Madam Ji ❤️</title>
+<style>
+:root{--pink:#e88eaa;--deep:#a94d70;--ink:#5c3445;--cream:#fff8fa}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;font-family:Georgia,'Times New Roman',serif;color:var(--ink);background:linear-gradient(145deg,#fff7fa,#fce8f0 55%,#f8edf9);overflow-x:hidden}
+#petals{position:fixed;inset:0;pointer-events:none;overflow:hidden;z-index:0}
+.petal{position:absolute;top:-30px;color:#e9a1b8;opacity:.65;animation:fall linear infinite}
+@keyframes fall{to{transform:translateY(110vh) rotate(540deg);opacity:.05}}
+main{position:relative;z-index:1}
+section{min-height:100svh;padding:72px 22px;display:flex;align-items:center;justify-content:center;text-align:center}
+.card{width:min(720px,100%);padding:clamp(28px,6vw,58px);border:1px solid #ffffffc9;border-radius:30px;background:#ffffffb8;box-shadow:0 18px 60px #a94d7017;backdrop-filter:blur(10px)}
+.kicker{font:600 11px/1.5 Arial,sans-serif;letter-spacing:3px;text-transform:uppercase;color:#b66c87}
+h1{font-size:clamp(42px,9vw,76px);line-height:1.04;margin:16px 0;color:var(--deep);font-weight:normal}
+h2{font-size:clamp(30px,6vw,48px);font-weight:normal;color:var(--deep);margin:0 0 22px}
+p{font-size:clamp(17px,3.8vw,21px);line-height:1.8;margin:12px auto;max-width:590px}
+.rose{font-size:56px;display:block;margin:18px 0;filter:drop-shadow(0 5px 8px #d78aa866)}
+button{border:0;border-radius:999px;padding:15px 25px;background:linear-gradient(120deg,#e99ab4,#c86f91);color:white;font:600 14px Arial,sans-serif;letter-spacing:.4px;box-shadow:0 8px 22px #c86f9140;cursor:pointer;transition:.2s}
+button:hover{transform:translateY(-2px);box-shadow:0 12px 26px #c86f9155}
+button:focus-visible{outline:3px solid #9c4968;outline-offset:4px}
+.small{font:12px Arial,sans-serif;color:#a47a8a;margin-top:22px}
+.divider{width:60px;height:1px;background:#e6b4c5;margin:24px auto}
+.promise{font-style:italic;color:#8e526b}
+#answer{min-height:28px;color:var(--deep);font-size:20px;margin-top:20px}
+footer{padding:20px;text-align:center;color:#ad8192;font:12px Arial,sans-serif;position:relative;z-index:1}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*:before,*:after{animation:none!important;transition:none!important}}
+</style>
+</head>
+<body>
+<div id="petals" aria-hidden="true"></div>
+<main>
+<section id="home">
+ <div class="card">
+  <div class="kicker">A small note from my heart</div>
+  <span class="rose">🌷</span>
+  <h1>A Little<br>Sorry, Madam Ji</h1>
+  <p>Kuch kehna hai… dil se. ❤️</p>
+  <div class="divider"></div>
+  <button onclick="document.querySelector('#sorry').scrollIntoView({behavior:'smooth'})">Read my little note</button>
+  <div class="small">Made with love, by Samyak</div>
+ </div>
+</section>
+<section id="sorry">
+ <div class="card">
+  <div class="kicker">Dil se, Madam Ji</div>
+  <h2>I'm really sorry. 🥺</h2>
+  <p>Kal mera behaviour thoda rude tha, aur shayad meri wajah se tumhe bura laga ho. Is baat ka mujhe sach mein afsos hai.</p>
+  <p>Mera intention kabhi tumhe hurt karna nahi tha. Lekin intention jo bhi ho, agar meri baaton se tumhara dil dukha, toh uske liye main dil se maafi maangta hoon.</p>
+  <p>Tum mere liye bahut special ho. Main perfect nahi hoon, mujhse galtiyan hoti hain, par main apni galti samajhna aur khud ko behtar banana chahta hoon.</p>
+  <div class="divider"></div>
+  <p class="promise">Main koshish karunga ki agli baar apne gusse se zyada tumhari feelings ka khayal rakhun.</p>
+  <button onclick="document.querySelector('#last').scrollIntoView({behavior:'smooth'})">One last thing…</button>
+ </div>
+</section>
+<section id="last">
+ <div class="card">
+  <span class="rose">🌹</span>
+  <div class="kicker">Just one little question</div>
+  <h2>Will you forgive me, Madam Ji?</h2>
+  <p>Jab tumhara mann ho tab baat kar lena. Koi jaldi nahi. Bas chahta tha ki tum tak meri sorry pahunch jaaye.</p>
+  <button onclick="document.getElementById('answer').textContent='Thank you for reading, Madam Ji. Sending you a gentle hug. 🤗❤️'">A little hug? 🤗</button>
+  <div id="answer" aria-live="polite"></div>
+  <div class="small">With care, always — Samyak ❤️</div>
+ </div>
+</section>
+</main>
+<footer>Made with a sincere heart · Madam Ji 🌸</footer>
+<script>
+const holder=document.getElementById('petals');
+const symbols=['♡','✿','❀','🌸'];
+for(let i=0;i<22;i++){
+ const el=document.createElement('span');el.className='petal';
+ el.textContent=symbols[i%symbols.length];
+ el.style.left=(Math.random()*100)+'%';
+ el.style.animationDuration=(9+Math.random()*12)+'s';
+ el.style.animationDelay=(-Math.random()*18)+'s';
+ el.style.fontSize=(12+Math.random()*17)+'px';
+ holder.appendChild(el);
+}
+</script>
+</body>
+</html>
